@@ -1,0 +1,1150 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Logistics | Login</title>
+
+    <style>
+        /* ================================
+           GENERAL RESET
+        ================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #eef4ff, #f8fbff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+            color: #1f2937;
+        }
+
+        /* ================================
+           MAIN CONTAINER
+        ================================= */
+        .container {
+            width: 100%;
+            max-width: 950px;
+            background: #ffffff;
+            border-radius: 22px;
+            overflow: hidden;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.4fr;
+
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ================================
+           LEFT INFORMATION PANEL
+        ================================= */
+        .info-panel {
+            background: linear-gradient(160deg, #163b68, #0b223d);
+            color: white;
+
+            padding: 50px 35px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 16px;
+
+            background: rgba(255, 255, 255, 0.15);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 30px;
+
+            margin-bottom: 25px;
+        }
+
+        .info-panel h1 {
+            font-size: 34px;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .info-panel p {
+            color: #d7e5f5;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin: 17px 0;
+
+            color: #e6f0fa;
+            font-size: 14px;
+        }
+
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ================================
+           FORM PANEL
+        ================================= */
+        .form-panel {
+            padding: 45px 45px;
+            background: #ffffff;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-header h2 {
+            font-size: 28px;
+            margin-bottom: 7px;
+            color: #162d4a;
+        }
+
+        .form-header p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* ================================
+           USER / ADMIN TOGGLE
+        ================================= */
+        .toggle-container {
+            background: #f1f5f9;
+            padding: 5px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            margin-bottom: 25px;
+        }
+
+        .toggle-option {
+            width: 50%;
+
+            border: none;
+            background: transparent;
+
+            padding: 11px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: #64748b;
+
+            transition: 0.3s;
+        }
+
+        .toggle-option.active {
+            background: #163b68;
+            color: white;
+
+            box-shadow: 0 4px 12px rgba(22, 59, 104, 0.25);
+        }
+
+        /* ================================
+           FORM
+        ================================= */
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 17px;
+        }
+
+        .input-group label {
+            display: block;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            margin-bottom: 7px;
+
+            color: #334155;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+
+            padding: 12px 13px;
+
+            border: 1px solid #d8e0ea;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            transition: 0.25s;
+
+            background: #fbfdff;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #3976b8;
+
+            box-shadow: 0 0 0 3px rgba(57, 118, 184, 0.10);
+
+            background: white;
+        }
+
+        /* ================================
+           PASSWORD FIELD
+        ================================= */
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 65px;
+        }
+
+        .show-password {
+            position: absolute;
+
+            right: 10px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+            background: transparent;
+
+            color: #3976b8;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+        /* ================================
+           CHECKBOX
+        ================================= */
+        .checkbox {
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+
+            margin: 5px 0 20px;
+
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .checkbox input {
+            accent-color: #163b68;
+        }
+
+        .checkbox a {
+            color: #28639c;
+            text-decoration: none;
+        }
+
+        /* ================================
+           SUBMIT BUTTON
+        ================================= */
+        .submit-btn {
+            width: 100%;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                135deg,
+                #163b68,
+                #28639c
+            );
+
+            color: white;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+
+            box-shadow: 0 7px 18px rgba(22, 59, 104, 0.20);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow: 0 10px 22px rgba(22, 59, 104, 0.28);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ================================
+           FOOTER LINKS
+        ================================= */
+        .footer-links {
+            text-align: center;
+
+            margin-top: 22px;
+
+            font-size: 12px;
+
+            color: #7b8794;
+        }
+
+        .footer-links a {
+            color: #28639c;
+
+            text-decoration: none;
+
+            margin: 0 5px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================================
+           MOBILE RESPONSIVE
+        ================================= */
+        @media (max-width: 750px) {
+
+            body {
+                padding: 15px;
+                align-items: flex-start;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+
+                margin-top: 10px;
+            }
+
+            .info-panel {
+                padding: 30px 25px;
+
+                text-align: center;
+            }
+
+            .logo {
+                margin: 0 auto 18px;
+            }
+
+            .info-panel h1 {
+                font-size: 27px;
+            }
+
+            .features {
+                display: none;
+            }
+
+            .form-panel {
+                padding: 30px 22px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .form-panel {
+                padding: 25px 17px;
+            }
+
+            .form-header h2 {
+                font-size: 24px;
+            }
+
+            .info-panel {
+                padding: 25px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ======================================
+             LEFT INFORMATION PANEL
+        ======================================= -->
+        <div class="info-panel">
+
+            <div class="logo">
+                🚚
+            </div>
+
+            <h1>
+                Smart Logistics
+            </h1>
+
+            <p>
+                Intelligent logistics and accessibility
+                management for smarter and safer transportation.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="feature-icon">📍</div>
+                    <span>Smart route accessibility</span>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🌦️</div>
+                    <span>Weather-aware logistics</span>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <span>Real-time accessibility insights</span>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🔐</div>
+                    <span>Secure user management</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================
+             RIGHT FORM PANEL
+        ======================================= -->
+        <div class="form-panel">
+
+            <div class="form-header">
+
+                <h2 id="formTitle">
+                    Create Account
+                </h2>
+
+                <p id="formSubtitle">
+                    Register to access the logistics platform
+                </p>
+
+            </div>
+
+
+            <!-- USER / ADMIN TOGGLE -->
+
+            <div class="toggle-container">
+
+                <button
+                    class="toggle-option active"
+                    id="userToggle"
+                    onclick="showUserForm()">
+
+                    👤 User
+
+                </button>
+
+                <button
+                    class="toggle-option"
+                    id="adminToggle"
+                    onclick="showAdminForm()">
+
+                    🛡️ Admin
+
+                </button>
+
+            </div>
+
+
+            <!-- ======================================
+                 USER FORM
+            ======================================= -->
+
+            <form
+                id="userForm"
+                class="form-section active"
+                onsubmit="submitUserForm(event)">
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label for="userName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="userName"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="userEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="userEmail"
+                            placeholder="example@email.com"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label for="userPhone">
+                            Contact Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="userPhone"
+                            placeholder="+91 XXXXX XXXXX"
+                            pattern="[0-9+\-\s]{10,15}"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="userLocation">
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="userLocation"
+                            placeholder="City / District"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="userOrganization">
+                        Organization / Company
+                    </label>
+
+                    <input
+                        type="text"
+                        id="userOrganization"
+                        placeholder="Enter organization name">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="userPassword">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="userPassword"
+                            placeholder="Create a strong password"
+                            minlength="8"
+                            required>
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword('userPassword', this)">
+
+                            Show
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="userTerms"
+                        required>
+
+                    <label for="userTerms">
+                        I agree to the
+                        <a href="terms.html">
+                            Terms & Conditions
+                        </a>
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Create User Account
+
+                </button>
+
+            </form>
+
+
+            <!-- ======================================
+                 ADMIN FORM
+            ======================================= -->
+
+            <form
+                id="adminForm"
+                class="form-section"
+                onsubmit="submitAdminForm(event)">
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label for="adminName">
+                            Administrator Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adminName"
+                            placeholder="Full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="adminId">
+                            Admin ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adminId"
+                            placeholder="e.g. ADM-001"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="adminEmail">
+                        Official Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="adminEmail"
+                        placeholder="admin@organization.com"
+                        required>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label for="adminPhone">
+                            Contact Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="adminPhone"
+                            placeholder="+91 XXXXX XXXXX"
+                            pattern="[0-9+\-\s]{10,15}"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="adminDepartment">
+                            Department
+                        </label>
+
+                        <select
+                            id="adminDepartment"
+                            required>
+
+                            <option value="">
+                                Select Department
+                            </option>
+
+                            <option>
+                                Operations
+                            </option>
+
+                            <option>
+                                Logistics
+                            </option>
+
+                            <option>
+                                Administration
+                            </option>
+
+                            <option>
+                                Transport Management
+                            </option>
+
+                            <option>
+                                IT / Technology
+                            </option>
+
+                            <option>
+                                Government / Authority
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="adminOrganization">
+                        Organization
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminOrganization"
+                        placeholder="Organization / Department name"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            placeholder="Enter admin password"
+                            minlength="8"
+                            required>
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword('adminPassword', this)">
+
+                            Show
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="adminTerms"
+                        required>
+
+                    <label for="adminTerms">
+
+                        I confirm that I am an authorized administrator.
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Admin Sign In
+
+                </button>
+
+            </form>
+
+
+            <!-- ======================================
+                 FOOTER / NAVIGATION LINKS
+            ======================================= -->
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                |
+
+                <a href="about.html">
+                    About
+                </a>
+
+                |
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                |
+
+                <a href="help.html">
+                    Help
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+        /*
+        ==========================================
+        USER FORM
+        ==========================================
+        */
+
+        function showUserForm() {
+
+            document
+                .getElementById("userForm")
+                .classList.add("active");
+
+            document
+                .getElementById("adminForm")
+                .classList.remove("active");
+
+            document
+                .getElementById("userToggle")
+                .classList.add("active");
+
+            document
+                .getElementById("adminToggle")
+                .classList.remove("active");
+
+            document
+                .getElementById("formTitle")
+                .textContent = "Create Account";
+
+            document
+                .getElementById("formSubtitle")
+                .textContent =
+                "Register to access the logistics platform";
+        }
+
+
+        /*
+        ==========================================
+        ADMIN FORM
+        ==========================================
+        */
+
+        function showAdminForm() {
+
+            document
+                .getElementById("adminForm")
+                .classList.add("active");
+
+            document
+                .getElementById("userForm")
+                .classList.remove("active");
+
+            document
+                .getElementById("adminToggle")
+                .classList.add("active");
+
+            document
+                .getElementById("userToggle")
+                .classList.remove("active");
+
+            document
+                .getElementById("formTitle")
+                .textContent = "Administrator Login";
+
+            document
+                .getElementById("formSubtitle")
+                .textContent =
+                "Sign in using your authorized administrator credentials";
+        }
+
+
+        /*
+        ==========================================
+        SHOW / HIDE PASSWORD
+        ==========================================
+        */
+
+        function togglePassword(inputId, button) {
+
+            const input =
+                document.getElementById(inputId);
+
+            if (input.type === "password") {
+
+                input.type = "text";
+                button.textContent = "Hide";
+
+            } else {
+
+                input.type = "password";
+                button.textContent = "Show";
+
+            }
+        }
+
+
+        /*
+        ==========================================
+        USER FORM SUBMISSION
+        ==========================================
+        */
+
+        function submitUserForm(event) {
+
+            event.preventDefault();
+
+            alert(
+                "User registration submitted successfully!"
+            );
+
+            /*
+            Later you can send the form data
+            to your backend using fetch():
+
+            fetch("/api/register", {
+                method: "POST",
+                body: ...
+            });
+
+            */
+
+        }
+
+
+        /*
+        ==========================================
+        ADMIN FORM SUBMISSION
+        ==========================================
+        */
+
+       async function submitAdminForm(event) {
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("adminEmail").value;
+
+    const password =
+        document.getElementById("adminPassword").value;
+
+
+    const response = await fetch(
+        "http://127.0.0.1:5000/api/login",
+        {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+                email: email,
+
+                password: password,
+
+                role: "ADMIN"
+
+            })
+        }
+    );
+
+
+    const result = await response.json();
+
+
+    if (result.success) {
+
+        alert(
+            "Admin Login Successful!\n" +
+            "Login #" +
+            result.login_record.event_number
+        );
+
+        window.location.href =
+            "admin-dashboard.html";
+
+    } else {
+
+        alert(result.message);
+
+    }
+}
+
+    </script>
+
+
+    <!-- ==========================================
+         DUMMY HREF BLOCKS
+         ===========================================
+
+         Replace these href values with your
+         actual webpage URLs later.
+    =========================================== -->
+
+    <div style="display:none;">
+
+        <!-- Main pages -->
+
+        <a href="index.html">
+            Home Page
+        </a>
+
+        <a href="dashboard.html">
+            User Dashboard
+        </a>
+
+        <a href="admin-dashboard.html">
+            Admin Dashboard
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="contact.html">
+            Contact Us
+        </a>
+
+        <a href="help.html">
+            Help Center
+        </a>
+
+        <a href="terms.html">
+            Terms & Conditions
+        </a>
+
+        <a href="privacy.html">
+            Privacy Policy
+        </a>
+
+        <!-- Example external link -->
+
+        <a href="https://example.com">
+            External Website
+        </a>
+
+    </div>
+
+</body>
+</html>
+```
