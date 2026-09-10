@@ -1,0 +1,454 @@
+{
+  "users": [
+    {
+      "id": "user-admin",
+      "name": "NER Operations",
+      "email": "admin@nerlogistics.in",
+      "password": "$2b$10$eOGTo3kyccKj/LC8TZsA2uGRJ6CO2pbcxM2D/h.hoRuVoyMQBYdZ6",
+      "role": "admin"
+    },
+    {
+      "id": "user-viewer",
+      "name": "Field Observer",
+      "email": "viewer@nerlogistics.in",
+      "password": "$2b$10$eOGTo3kyccKj/LC8TZsA2uGRJ6CO2pbcxM2D/h.hoRuVoyMQBYdZ6",
+      "role": "viewer"
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-01",
+      "name": "NH-27 Guwahati — Silchar",
+      "startPoint": "Guwahati",
+      "endPoint": "Silchar",
+      "state": "Assam",
+      "terrain": "Plains",
+      "status": "accessible",
+      "notes": "Primary cargo corridor. Routine maintenance completed.",
+      "weather": "Clear",
+      "roadCondition": "Good",
+      "incidents": 1,
+      "riskScore": 24,
+      "coordinates": [
+        26.1445,
+        91.7362
+      ],
+      "lastUpdated": "2026-09-09T08:20:00Z"
+    },
+    {
+      "id": "route-02",
+      "name": "NH-6 Shillong — Silchar",
+      "startPoint": "Shillong",
+      "endPoint": "Silchar",
+      "state": "Meghalaya",
+      "terrain": "Hilly",
+      "status": "delayed",
+      "notes": "Intermittent rain near Jowai. Convoys advised to travel in daylight.",
+      "weather": "Heavy rain",
+      "roadCondition": "Fair",
+      "incidents": 3,
+      "riskScore": 68,
+      "coordinates": [
+        25.5788,
+        91.8933
+      ],
+      "lastUpdated": "2026-09-09T07:45:00Z"
+    },
+    {
+      "id": "route-03",
+      "name": "NH-2 Dimapur — Imphal",
+      "startPoint": "Dimapur",
+      "endPoint": "Imphal",
+      "state": "Nagaland",
+      "terrain": "Mountain",
+      "status": "risk",
+      "notes": "Landslide watch active near the Pfutsero bend.",
+      "weather": "Rain",
+      "roadCondition": "Poor",
+      "incidents": 5,
+      "riskScore": 86,
+      "coordinates": [
+        25.6747,
+        93.1025
+      ],
+      "lastUpdated": "2026-09-09T06:10:00Z"
+    },
+    {
+      "id": "route-04",
+      "name": "NH-37 Tinsukia — Namsai",
+      "startPoint": "Tinsukia",
+      "endPoint": "Namsai",
+      "state": "Arunachal Pradesh",
+      "terrain": "Forest",
+      "status": "accessible",
+      "notes": "Clear route with good visibility across the Lohit bridge.",
+      "weather": "Clear",
+      "roadCondition": "Good",
+      "incidents": 0,
+      "riskScore": 12,
+      "coordinates": [
+        27.488,
+        95.3558
+      ],
+      "lastUpdated": "2026-09-09T08:05:00Z"
+    },
+    {
+      "id": "route-05",
+      "name": "NH-306 Aizawl — Silchar",
+      "startPoint": "Aizawl",
+      "endPoint": "Silchar",
+      "state": "Mizoram",
+      "terrain": "Mountain",
+      "status": "delayed",
+      "notes": "Single lane movement at two work zones.",
+      "weather": "Cloudy",
+      "roadCondition": "Fair",
+      "incidents": 2,
+      "riskScore": 58,
+      "coordinates": [
+        23.7271,
+        92.7176
+      ],
+      "lastUpdated": "2026-09-09T05:50:00Z"
+    },
+    {
+      "id": "route-06",
+      "name": "NH-6 Agartala — Aizawl",
+      "startPoint": "Agartala",
+      "endPoint": "Aizawl",
+      "state": "Tripura",
+      "terrain": "Hilly",
+      "status": "accessible",
+      "notes": "No restrictions. Border movement normal.",
+      "weather": "Clear",
+      "roadCondition": "Good",
+      "incidents": 1,
+      "riskScore": 22,
+      "coordinates": [
+        23.8315,
+        91.2868
+      ],
+      "lastUpdated": "2026-09-09T07:22:00Z"
+    },
+    {
+      "id": "route-07",
+      "name": "NH-202 Kohima — Mokokchung",
+      "startPoint": "Kohima",
+      "endPoint": "Mokokchung",
+      "state": "Nagaland",
+      "terrain": "Mountain",
+      "status": "risk",
+      "notes": "Soft shoulder reported after overnight rainfall.",
+      "weather": "Rain",
+      "roadCondition": "Poor",
+      "incidents": 4,
+      "riskScore": 79,
+      "coordinates": [
+        25.6751,
+        94.1086
+      ],
+      "lastUpdated": "2026-09-09T04:30:00Z"
+    },
+    {
+      "id": "route-08",
+      "name": "NH-102 Imphal — Moreh",
+      "startPoint": "Imphal",
+      "endPoint": "Moreh",
+      "state": "Manipur",
+      "terrain": "Hilly",
+      "status": "accessible",
+      "notes": "Trade route open with standard checks at Tengnoupal.",
+      "weather": "Clear",
+      "roadCondition": "Good",
+      "incidents": 1,
+      "riskScore": 28,
+      "coordinates": [
+        24.817,
+        93.9368
+      ],
+      "lastUpdated": "2026-09-09T08:42:00Z"
+    },
+    {
+      "id": "route-09",
+      "name": "NH-10 Gangtok — Siliguri",
+      "startPoint": "Gangtok",
+      "endPoint": "Siliguri",
+      "state": "Sikkim",
+      "terrain": "Mountain",
+      "status": "delayed",
+      "notes": "Slow movement near Rangpo due to fog.",
+      "weather": "Fog",
+      "roadCondition": "Fair",
+      "incidents": 3,
+      "riskScore": 62,
+      "coordinates": [
+        27.3389,
+        88.6065
+      ],
+      "lastUpdated": "2026-09-09T06:38:00Z"
+    },
+    {
+      "id": "route-10",
+      "name": "Trans-Arunachal Highway",
+      "startPoint": "Itanagar",
+      "endPoint": "Tawang",
+      "state": "Arunachal Pradesh",
+      "terrain": "Mountain",
+      "status": "risk",
+      "notes": "Snow and low visibility expected above Sela Pass.",
+      "weather": "Snow",
+      "roadCondition": "Poor",
+      "incidents": 6,
+      "riskScore": 91,
+      "coordinates": [
+        27.0844,
+        93.6053
+      ],
+      "lastUpdated": "2026-09-09T03:18:00Z"
+    },
+    {
+      "id": "route-11",
+      "name": "NH-15 Dibrugarh — Pasighat",
+      "startPoint": "Dibrugarh",
+      "endPoint": "Pasighat",
+      "state": "Assam",
+      "terrain": "Plains",
+      "status": "accessible",
+      "notes": "Freight movement on schedule.",
+      "weather": "Clear",
+      "roadCondition": "Good",
+      "incidents": 0,
+      "riskScore": 10,
+      "coordinates": [
+        27.4728,
+        94.912
+      ],
+      "lastUpdated": "2026-09-09T07:58:00Z"
+    },
+    {
+      "id": "route-12",
+      "name": "NH-51 Tura — Guwahati",
+      "startPoint": "Tura",
+      "endPoint": "Guwahati",
+      "state": "Meghalaya",
+      "terrain": "Forest",
+      "status": "accessible",
+      "notes": "Route open. Watch for animal crossings after dusk.",
+      "weather": "Cloudy",
+      "roadCondition": "Good",
+      "incidents": 1,
+      "riskScore": 31,
+      "coordinates": [
+        25.514,
+        90.203
+      ],
+      "lastUpdated": "2026-09-09T06:55:00Z"
+    },
+    {
+      "id": "route-13",
+      "name": "NH-44 Jiribam — Imphal",
+      "startPoint": "Jiribam",
+      "endPoint": "Imphal",
+      "state": "Manipur",
+      "terrain": "Hilly",
+      "status": "delayed",
+      "notes": "Repair crew active near Nungkao.",
+      "weather": "Light rain",
+      "roadCondition": "Fair",
+      "incidents": 3,
+      "riskScore": 66,
+      "coordinates": [
+        24.817,
+        93.16
+      ],
+      "lastUpdated": "2026-09-09T05:35:00Z"
+    },
+    {
+      "id": "route-14",
+      "name": "NH-208 Kailashahar — Khowai",
+      "startPoint": "Kailashahar",
+      "endPoint": "Khowai",
+      "state": "Tripura",
+      "terrain": "Plains",
+      "status": "accessible",
+      "notes": "Accessible for heavy vehicles.",
+      "weather": "Clear",
+      "roadCondition": "Good",
+      "incidents": 0,
+      "riskScore": 14,
+      "coordinates": [
+        24.327,
+        92.014
+      ],
+      "lastUpdated": "2026-09-09T08:00:00Z"
+    },
+    {
+      "id": "route-15",
+      "name": "NH-715 Jorhat — Itanagar",
+      "startPoint": "Jorhat",
+      "endPoint": "Itanagar",
+      "state": "Assam",
+      "terrain": "Forest",
+      "status": "accessible",
+      "notes": "Bridge approach cleared after inspection.",
+      "weather": "Cloudy",
+      "roadCondition": "Good",
+      "incidents": 1,
+      "riskScore": 27,
+      "coordinates": [
+        26.75,
+        94.2167
+      ],
+      "lastUpdated": "2026-09-09T07:40:00Z"
+    },
+    {
+      "id": "route-16",
+      "name": "NH-515 Jonai — Yingkiong",
+      "startPoint": "Jonai",
+      "endPoint": "Yingkiong",
+      "state": "Arunachal Pradesh",
+      "terrain": "Forest",
+      "status": "delayed",
+      "notes": "Low visibility on the foothill section.",
+      "weather": "Cloudy",
+      "roadCondition": "Fair",
+      "incidents": 2,
+      "riskScore": 54,
+      "coordinates": [
+        28.218,
+        94.7278
+      ],
+      "lastUpdated": "2026-09-09T04:55:00Z"
+    },
+    {
+      "id": "route-17",
+      "name": "NH-29 Dimapur — Kohima",
+      "startPoint": "Dimapur",
+      "endPoint": "Kohima",
+      "state": "Nagaland",
+      "terrain": "Mountain",
+      "status": "accessible",
+      "notes": "Traffic normal. New retaining wall work completed.",
+      "weather": "Clear",
+      "roadCondition": "Good",
+      "incidents": 1,
+      "riskScore": 34,
+      "coordinates": [
+        25.769,
+        93.724
+      ],
+      "lastUpdated": "2026-09-09T08:15:00Z"
+    },
+    {
+      "id": "route-18",
+      "name": "NH-306 Lunglei — Lawngtlai",
+      "startPoint": "Lunglei",
+      "endPoint": "Lawngtlai",
+      "state": "Mizoram",
+      "terrain": "Mountain",
+      "status": "risk",
+      "notes": "Slope movement reported by local observer.",
+      "weather": "Heavy rain",
+      "roadCondition": "Poor",
+      "incidents": 4,
+      "riskScore": 83,
+      "coordinates": [
+        22.887,
+        92.742
+      ],
+      "lastUpdated": "2026-09-09T02:45:00Z"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-01",
+      "title": "Landslide risk on NH-2 near Dimapur",
+      "route": "NH-2 Dimapur — Imphal",
+      "state": "Nagaland",
+      "severity": "critical",
+      "message": "Heavy rainfall has increased slope movement risk. Avoid night movement.",
+      "status": "active",
+      "createdAt": "2026-09-09T06:10:00Z"
+    },
+    {
+      "id": "alert-02",
+      "title": "Reduced visibility on NH-10",
+      "route": "NH-10 Gangtok — Siliguri",
+      "state": "Sikkim",
+      "severity": "warning",
+      "message": "Fog reported near Rangpo. Drivers should use headlights and reduce speed.",
+      "status": "active",
+      "createdAt": "2026-09-09T05:48:00Z"
+    },
+    {
+      "id": "alert-03",
+      "title": "Sela Pass movement advisory",
+      "route": "Trans-Arunachal Highway",
+      "state": "Arunachal Pradesh",
+      "severity": "critical",
+      "message": "Snow and sub-zero temperatures may block the upper section.",
+      "status": "active",
+      "createdAt": "2026-09-09T03:18:00Z"
+    },
+    {
+      "id": "alert-04",
+      "title": "Maintenance near Jowai",
+      "route": "NH-6 Shillong — Silchar",
+      "state": "Meghalaya",
+      "severity": "warning",
+      "message": "Single-lane traffic is being managed by a local crew.",
+      "status": "active",
+      "createdAt": "2026-09-08T14:20:00Z"
+    },
+    {
+      "id": "alert-05",
+      "title": "Slope movement in Lunglei",
+      "route": "NH-306 Lunglei — Lawngtlai",
+      "state": "Mizoram",
+      "severity": "critical",
+      "message": "Temporary hold recommended for loaded vehicles until inspection.",
+      "status": "active",
+      "createdAt": "2026-09-08T11:05:00Z"
+    },
+    {
+      "id": "alert-06",
+      "title": "Bridge inspection completed",
+      "route": "NH-715 Jorhat — Itanagar",
+      "state": "Assam",
+      "severity": "info",
+      "message": "Bridge approach has been cleared for regular freight movement.",
+      "status": "resolved",
+      "createdAt": "2026-09-08T08:30:00Z"
+    },
+    {
+      "id": "alert-07",
+      "title": "Roadworks scheduled on NH-44",
+      "route": "NH-44 Jiribam — Imphal",
+      "state": "Manipur",
+      "severity": "warning",
+      "message": "Expect 20-minute delays between 10:00 and 16:00.",
+      "status": "active",
+      "createdAt": "2026-09-07T09:40:00Z"
+    },
+    {
+      "id": "alert-08",
+      "title": "Freight route reopened",
+      "route": "NH-202 Kohima — Mokokchung",
+      "state": "Nagaland",
+      "severity": "info",
+      "message": "The route remains open with a risk advisory for commercial vehicles.",
+      "status": "resolved",
+      "createdAt": "2026-09-06T16:15:00Z"
+    },
+    {
+      "id": "alert-09",
+      "title": "Weather watch for foothills",
+      "route": "NH-515 Jonai — Yingkiong",
+      "state": "Arunachal Pradesh",
+      "severity": "warning",
+      "message": "Cloud cover may reduce visibility in the afternoon window.",
+      "status": "active",
+      "createdAt": "2026-09-05T07:00:00Z"
+    }
+  ]
+}
